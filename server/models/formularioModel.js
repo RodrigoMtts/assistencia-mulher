@@ -1,0 +1,1 @@
+//Arquivo onde  o método de verificação de violencia sofrida deve está
