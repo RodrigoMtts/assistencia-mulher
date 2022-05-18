@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes } from "sequelize"
 
-const connection = new Sequelize("assistencia_mulher", "adm", "123", {
+const connection = new Sequelize("assistencia_mulher", "root", "adm123", {
     host: "localhost",
     dialect: "mysql"
 })

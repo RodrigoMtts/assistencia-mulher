@@ -3,8 +3,8 @@ import perguntaDB from '../databases/mysql.js'
 
 const connection = mysql.createConnection({
     host: "localhost",
-    user: "adm",
-    password: "123",
+    user: "root",
+    password: "adm123",
 });
 
 connection.query(
