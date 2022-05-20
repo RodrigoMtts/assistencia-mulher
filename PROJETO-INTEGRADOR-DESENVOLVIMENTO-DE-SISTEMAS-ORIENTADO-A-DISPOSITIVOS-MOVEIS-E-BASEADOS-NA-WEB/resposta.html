@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Assistência à Mulher | Projeto Integrador</title>
+        <title>Assistência à Mulher | Resposta ao Formulário </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Assistência a mulher, onde elas podem saber se são abusadas e como agir nessa situação">
-        <meta property="og:title" content="Assistência à Mulher | Projeto Integrador" />
+        <meta property="og:title" content="Assistência à Mulher | Resposta ao Formulário" />
         <meta property="og:description"  content="Assistência a mulher, onde elas podem saber se são abusadas e como agir nessa situação" />
         <meta property="og:type" content="website"/>       
         <meta name="twitter:card" content="summary"/>
-        <meta property="twitter:title" content="Assistência à Mulher | Projeto Integrador"/>
+        <meta property="twitter:title" content="Assistência à Mulher | Resposta ao Formulário"/>
 		<meta property="twitter:description" content="Assistência a mulher, onde elas podem saber se são abusadas e como agir nessa situação"/>     
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>  
         <link href="assets/css/styleLandingPageGeneric.css" rel="stylesheet" type="text/css">
@@ -34,42 +34,25 @@
         <section class="bg-dark d-flex justify-content-center full-fold">
             <div class="container">
                 <div class="row align-items-stretch justify-content-center fold-content">
-                    <div class="col-12 col-md-11 col-lg-7 d-flex flex-column align-items-start ">
-                        <p class="lead"><span>Secretaria da Mulher</span></p>
-                        <h1 class="ic-text-pink">
-                            Assistência à 
+                    <div class="col-12 col-md-11 col-lg-8 d-flex flex-column align-items-center boxed-content">
+                        <p class="ic-text-muted text-center">Você está sofrendo os seguintes tipos de violência: </p>  
+                        <!--return-data-->
+                        <p class="return-data ic-text-white text-center">{{return.data}}</p>
+
+                        <h2 class="ic-text-pink text-center">
+                            DENUNCIE!
                             <br class="d-none d-sm-block"> 
-                            Mulher
-                        </h1>
-                        <p class="ic-text-muted">Aqui você  pode descobrir se está sofrendo algum tipo de violência e como agir para se defender.
-                        <br>
-                        <br>
-                        Responda as perguntas e clique verificar.
-                        </p>
-                    
-                        <img src="assets/img/woman-keeps-arms-folded.png" class="img-dos d-none d-lg-flex" alt="ilustracion sorteo">
-                       
-                    </div>
-                    
-                    <div class="col-12 col-lg-5 offset-xl-1 col-xl-4 long-form">
-                        <div class="ic-dynamic-form-container mb-5">
-                            <h3 class="ic-form-title d-none d-md-block">
-                                Responda a seguir:
-                            </h3>                           
-                            <!--form-->
-                            <form id="form" class="dynamic-form bg-white" method="post" 
-                            id="" action="" prevent-edit="true" data-highlightable="1" data-ic-export-editor-attributes="true" 
-                            novalidate="novalidate">
+                            Rede de Proteção à Mulher
+                        </h2>
 
-                            <div id="listaPerguntas"></div>                            
+                        <p class="ic-text-muted text-center mb-4">Secretaria da Mulher:  (21) 1122-3344 
+                            <br>MP/Promotoria das Mulheres: (21) 1122-3344</p>
 
-                            <div class="ic-class-form-row col-12 mt-4 mb-2">
-                                <button type="submit" id="submit-btn" class="ic-class-form-button-submit btn" onClick="enviaFormolario()">
-                                    Enviar
-                                </button>
-                            </div>
-                        </form>
-                        </div>
+                        <p class="ic-text-muted text-center mb-4">Patrulha Mulher Mais Segura (GCM): 153
+                           <br> Patrulha Maria da Penha (PM): 190
+                           <br> Central de Atendimento à Mulher em situação de Violência: 180</p>
+                     
+                        <a class="btn btn-primary" href="index.html">Voltar</a> 
                     </div>
                 </div>               
             </div>           
