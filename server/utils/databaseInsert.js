@@ -1,11 +1,12 @@
 import mysql from 'mysql2'
 import db from '../databases/mysql.js'
+import config from 'config'
 
 //Conecta ao MySQL
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "adm",
-    password: "123",
+    host: config.mySql.hostname,
+    user: config.mySql.user,
+    password: config.mySql.password,
 });
 
 //Cria o banco caso não exista
