@@ -14,7 +14,7 @@ const formularioRepository = {
         return db.respostaDB.create({resposta})
             .then()
             .catch((err) => {
-                throw new Error("Erro na hora de listar Peguntas: " + err)
+                throw new Error("Erro na hora de gravar Peguntas: " + err)
             })
     }
 }
