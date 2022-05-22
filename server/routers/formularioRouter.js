@@ -5,11 +5,7 @@ const router = new Router()
 
 // Rota inicial da aplicação, por ela se pede a lista de perguntas
 router.get('/', formularioController.listaPerguntas)
-
-/*
-Deve-se criar a rota POST que recebe os 
-valores do formulário e devolve as violencias
-sofridas para o front end
-*/
+// Rota que recebe as respostas
+router.post('/resposta', formularioController.gravaResposta)
 
 export default router

@@ -1,0 +1,9 @@
+{
+  "mySql": {
+    "hostname": "localhost",
+    "database": "assistencia_mulher",
+    "user": "adm",
+    "password": "123",
+    "dialect": "mysql"
+  }
+}

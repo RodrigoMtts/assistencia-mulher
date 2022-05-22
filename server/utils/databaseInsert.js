@@ -1,12 +1,14 @@
 import mysql from 'mysql2'
-import perguntaDB from '../databases/mysql.js'
+import db from '../databases/mysql.js'
 
+//Conecta ao MySQL
 const connection = mysql.createConnection({
     host: "localhost",
     user: "adm",
     password: "123",
 });
 
+//Cria o banco caso não exista
 connection.query(
     `CREATE DATABASE IF NOT EXISTS assistencia_mulher`,
     function (err, results) {
@@ -15,6 +17,7 @@ connection.query(
     }
 );
 
+//Perguntas que serão inseridas no Banco
 const perguntas = [
     { id: 0, pergunta: "O seu companheiro te bate?" },
     { id: 1, pergunta: "O seu companheiro te violenta? " },
@@ -30,13 +33,16 @@ const perguntas = [
     { id: 11, pergunta: "O seu companheiro te nega o direito a métodos contraceptivos?" },
     { id: 12, pergunta: "O seu companheiro te pressiona a fazer sexo?" }
 ]
+
+//Método que será chamado no Controllher para criar as tabelas e inserir as perguntas
 const databaseInsert = () => {
-    perguntaDB.sync().then(() => {
-        perguntaDB.findAndCountAll()
+    db.perguntaDB.sync().then(() => {
+        db.perguntaDB.findAndCountAll()
             .then(result => {
+                db.respostaDB.sync() // Cria a tabela resposta
                 if (result.count === 0) {
                     perguntas.forEach(p => {
-                        perguntaDB.create(p)
+                        db.perguntaDB.create(p)
                     })
                 }
             })

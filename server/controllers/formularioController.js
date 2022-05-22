@@ -1,5 +1,6 @@
 import db from '../respositories/formularioRepository.js'
 import databaseInsert from '../utils/databaseInsert.js'
+import formulario from '../models/formularioModel.js'
 
 const formularioController = {
     /*
@@ -14,14 +15,29 @@ const formularioController = {
         await databaseInsert()
 
         //lista as perguntas no banco de dados
-        db.listaPerguntas().then((perguntas) => {
-            res.status(200).json(perguntas)
-        })
-    }
+        db.listaPerguntas()
+            .then((perguntas) => {
+                res.status(200).json(perguntas)
+            })
+            .catch((err) => {
+                console.log("Erro: ControllerFormulario.ListaPerguntas " + err)
+                res.status(500).json({Erro: "Algo deu errado, tente mais tarde"})
+            })
+    },
     /*
-    Deve-se criar o método que chama formuilarioRepository para 
-    armazenar no banco de dados a resposta enviada pelo usuário
+    Método que chama formuilarioRepository para 
+    armazenar no banco de dados as Violências sofridas
     */
+    gravaResposta(req, res) {
+        db.gravaResposta(formulario.geraResposta(req.body))
+            .then(() => {
+                res.status(201).json(formulario.geraResposta(req.body))
+            })
+            .catch((err) => {
+                console.log("Erro: ControllerFormulario.gravaResposta " + err)
+                res.status(500).json({Erro: "Algo deu errado, tente mais tarde"})
+            })
+    }
 }
 
 export default formularioController
