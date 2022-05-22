@@ -68,10 +68,20 @@ function main() {
   let perguntas = JSON.parse(data);
 
   let listaPerguntas = document.getElementById("listaPerguntas");
+<<<<<<< HEAD
   perguntas.forEach(element => {
     let linha = criaLinha(element);
     listaPerguntas.appendChild(linha);
   });
+=======
+
+  if(listaPerguntas){
+    perguntas.forEach(element => {
+      let linha = criaLinha(element);
+      listaPerguntas.appendChild(linha);
+    });
+  }    
+>>>>>>> online/master
 }
 
 const form = document.querySelector("#form");
@@ -87,6 +97,7 @@ form.addEventListener("submit", (event) => {
   console.log(json[12])
 
   const options = {
+<<<<<<< HEAD
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -113,6 +124,38 @@ form.addEventListener("submit", (event) => {
 
   console.log("A abaixo")
   console.log(a)
+=======
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(json)
+    }
+    
+  fetch('http://localhost:8080/resposta', options)
+  .then( res =>  {
+    if(res.status === 201){
+      alert("Dados salvos com sucesso")
+      return res.json();
+    }else{
+      alert("Algo deu errado, tente novamente mais tarde")
+      return new Error("Deu ruim")
+    }
+  })
+  .catch(function(err){
+    console.log("Erro no fetch")
+    return new Error("Deu ruim " + err)
+  }).then(corpo => {   
+
+    let resposta = 'nenhuma'
+
+    if (corpo !== ''){
+      resposta = corpo
+    }
+
+    window.location.href=`resposta.html?violencias=${resposta}`;
+  })
+>>>>>>> online/master
 })
 
 main()

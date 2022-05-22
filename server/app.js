@@ -53,7 +53,8 @@ app.post("/resposta", (req, res) => {
         }
     })
     // Envia quais violências foram sofridas
-    res.status(201).json([...new Set(violencias)])
+    let distintos = [...new Set(violencias)];
+    res.status(201).json(distintos.join())
 })
 
 //Manipulador de erro genérico NÃO DEVE SER REMVIDO DAQUI
