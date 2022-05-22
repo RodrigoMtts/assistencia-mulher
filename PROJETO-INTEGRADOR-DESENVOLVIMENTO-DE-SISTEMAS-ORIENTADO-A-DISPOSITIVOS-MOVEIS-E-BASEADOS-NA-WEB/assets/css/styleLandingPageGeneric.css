@@ -16,6 +16,10 @@ color: #D2D3DC !important;
     color: #CD2469;   
 }
 
+.ic-text-white{
+    color: #FFFFFF;   
+}
+
 .ic-text-gray{
     color: #F8F8F8;   
 }
@@ -88,6 +92,7 @@ h2 {
     font-weight: 400;
     line-height: 1.4;
     margin-bottom: 1.75rem; /*  50px*/
+    font-weight: 800!important;
 }
 
 h2.fs{
@@ -124,6 +129,19 @@ p.lead:before{
     width: 100%;
     background-color: #CD2469;
     height: 8px;
+}
+
+.boxed-content{
+    border: 2px solid #CD2469;
+    padding:50px;
+    margin-bottom: 100px;
+}
+
+p.return-data {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 36px;
 }
 
 footer p{
@@ -192,8 +210,12 @@ a.btn-secondary:not([href]):not([tabindex]){
     margin-bottom:20px;
 }
 
-.ic-class-form-button-submit.btn:hover {
+.ic-class-form-button-submit.btn:hover,
+.btn.btn-primary:hover {
     opacity:0.8;
+    color: #ffffff!important;
+    background-color: #CD2469;
+    border-color: #CD2469;
 }
 
 .ic-pb-v{
@@ -235,10 +257,16 @@ h3.ic-form-title{
 }
 
 
-
 /*--------------------------------------- media queries LP && TYP*/
 
 @media (max-width: 767px) {
+
+
+    .boxed-content{
+        padding:20px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
 
     .nav-ic-text{
         font: 700 11px/16px Open Sans, sans-serif; 
@@ -323,6 +351,13 @@ h3.ic-form-title{
 
 
 @media all and (min-width: 768px) and (max-width: 991px){
+
+    
+    .boxed-content{
+        margin-top: 60px;
+        margin-bottom:60px;
+        padding: 35px;
+    }
 
     .fold-content{
         /*height: 100%;*/
@@ -429,7 +464,7 @@ SVG Images DeBug
 
 @media all and (min-width: 992px) and (max-width: 1055px){
     .img-dos {
-        margin: auto 0px 0px -60px;
+        margin: auto 0px 0px auto; 
     }
 }
 
