@@ -15,7 +15,7 @@ const formualario = {
             violencias.push("sexual")
         } else {
             // Caso o formato dos dados da requisição esteja errado
-            res.status(415).json({ Error: "Formato de dados errado" })
+            throw new Error("Formato de dados errado")
         }
     })
     // Envia quais violências foram sofridas

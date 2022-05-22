@@ -29,6 +29,7 @@ const formularioController = {
     armazenar no banco de dados as Violências sofridas
     */
     gravaResposta(req, res) {
+        try{
         db.gravaResposta(formulario.geraResposta(req.body))
             .then(() => {
                 res.status(201).json(formulario.geraResposta(req.body))
@@ -37,6 +38,9 @@ const formularioController = {
                 console.log("Erro: ControllerFormulario.gravaResposta " + err)
                 res.status(500).json({Erro: "Algo deu errado, tente mais tarde"})
             })
+        }catch(err){
+            res.status(415).json({ Error: "Formato de dados errado" })
+        }
     }
 }
 
