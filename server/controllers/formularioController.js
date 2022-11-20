@@ -12,8 +12,14 @@ const formularioController = {
         Insere a listra de perguntas no banco de dados
         quando elas não existem
         */
-        await databaseInsert()
+        try{
+            await databaseInsert()
+        }
+        catch(err){
+            console.log("Não foi possível inserir as perguntas no banco de dados")
+            console.log("Erro: formularioController.listaPerguntas " + err)
 
+        }
         //lista as perguntas no banco de dados
         db.listaPerguntas()
             .then((perguntas) => {

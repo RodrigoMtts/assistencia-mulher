@@ -2,7 +2,7 @@ import db from '../databases/mysql.js'
 
 const formularioRepository = {
     //Método que pega as peruntas do formualário
-    listaPerguntas() {
+    listaPerguntas(){
         return db.perguntaDB.findAll({ attributes: ['id', "pergunta"] })
             .then()
             .catch((err) => {
